@@ -31,7 +31,7 @@ it("Should redner product component whitout errors", () => {
   expect(component.length).toBe(1);
 });
 
-it("Should recie p component whit name prop", () => {
+it("Should recibe p component whit name prop", () => {
   const Component = findByTestAtrr(setUp({ ...props }), "product-name");
   expect(Component.text()).toBe(props.name);
 });

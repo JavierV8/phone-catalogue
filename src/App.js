@@ -34,21 +34,22 @@ function App() {
     );
 
   const inputHandler = (e) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
     setInput(value);
     value === "" ? dispatch(getProducts()) : dispatch(searchProduct(value));
   };
   return (
-    <div className="App-container">
+    <div className="App-container" data-test="appComponent">
       <input
         className="App-input"
+        data-test="inputComponent"
         placeholder="Search for phone"
         value={input}
         onChange={(e) => inputHandler(e)}
       />
       <div className="App-products">
         {isLoading ? (
-          <div className="App-spinner">
+          <div className="App-spinner" data-test="spinnerComponent">
             <Spinner color="primary" />
           </div>
         ) : (

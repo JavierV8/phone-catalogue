@@ -25,7 +25,10 @@ const ModalComponent = (props) => {
       <ModalBody>
         <div className="modal-body">
           <div className="modal-img">
-            <img src={process.env.PUBLIC_URL + `images/${imageFileName}`} />
+            <img
+              src={process.env.PUBLIC_URL + `images/${imageFileName}`}
+              alt="img"
+            />
           </div>
           <div className="modal-description">
             <h5>{name}</h5>
@@ -61,6 +64,16 @@ const ModalComponent = (props) => {
 };
 
 ModalComponent.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  manufacturer: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  imageFileName: PropTypes.string.isRequired,
+  screen: PropTypes.string.isRequired,
+  processor: PropTypes.string.isRequired,
+  ram: PropTypes.string.isRequired,
   isVisible: PropTypes.bool.isRequired,
   setVisible: PropTypes.func.isRequired,
 };

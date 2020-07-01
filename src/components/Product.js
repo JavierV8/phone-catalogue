@@ -24,14 +24,9 @@ const Product = (props) => {
   };
 
   return (
-    <div
-      className="product-container"
-      data-test="productComponent"
-      onClick={(e) => toggleModal(e)}
-    >
+    <div className="product-container" onClick={(e) => toggleModal(e)}>
       {!imageLoading ? null : (
         <div
-          data-test="product-div-loading"
           style={{
             background: "rgb(250, 250, 250)",
             height: "200px",
@@ -43,14 +38,13 @@ const Product = (props) => {
       )}
       <img
         style={!imageLoading ? {} : { display: "none" }}
-        data-test="product-image"
         className="product-image"
         src={process.env.PUBLIC_URL + `images/${imageFileName}`}
         alt="img"
         onLoad={() => setImageLoading(false)}
       />
-      <p data-test="product-name">{name}</p>
-      <p data-test="product-price">{price} €</p>
+      <p>{name}</p>
+      <p>{price} €</p>
       <Modal
         key={id}
         id={id}

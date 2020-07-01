@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, ModalHeader, ModalBody, Table } from "reactstrap";
+import PropTypes from "prop-types";
 import "./Modal.css";
 
 const ModalComponent = (props) => {
@@ -24,10 +25,7 @@ const ModalComponent = (props) => {
       <ModalBody>
         <div className="modal-body">
           <div className="modal-img">
-            <img
-              src={process.env.PUBLIC_URL + `images/${imageFileName}`}
-              alt="img"
-            />
+            <img src={process.env.PUBLIC_URL + `images/${imageFileName}`} />
           </div>
           <div className="modal-description">
             <h5>{name}</h5>
@@ -60,6 +58,11 @@ const ModalComponent = (props) => {
       </ModalBody>
     </Modal>
   );
+};
+
+ModalComponent.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired,
 };
 
 export default ModalComponent;

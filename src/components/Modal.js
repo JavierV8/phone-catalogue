@@ -20,18 +20,24 @@ const ModalComponent = (props) => {
   const toggle = () => setVisible();
 
   return (
-    <Modal isOpen={isVisible} toggle={toggle} size="lg">
+    <Modal
+      isOpen={isVisible}
+      toggle={toggle}
+      size="lg"
+      data-test="modalComponent"
+    >
       <ModalHeader toggle={toggle} />
       <ModalBody>
         <div className="modal-body">
-          <div className="modal-img">
+          <div className="modal-img" data-set="modal-img">
             <img
               src={process.env.PUBLIC_URL + `images/${imageFileName}`}
+              data-test="modalImage"
               alt="img"
             />
           </div>
-          <div className="modal-description">
-            <h5>{name}</h5>
+          <div className="modal-description" data-test="modalDescription">
+            <h5 datat-test="modalName">{name}</h5>
             <p>{manufacturer}</p>
             <p>{description}</p>
             <p className="modal-price">{price} €</p>

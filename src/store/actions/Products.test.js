@@ -49,9 +49,10 @@ describe("Test thunk action creator", () => {
       { type: actions.LOADING_IN_PROGRESS, isLoading: true },
       { type: actions.SET_PRODUCTS, products: { ...Phones } },
     ];
-    const store = mockStore({});
+    const store = mockStore({ products: Phones });
     return store.dispatch(getProducts()).then(() => {
-      const actualActions = store.getActions().map((action) => action.type);
+      const newState = store.getState();
+      expect(newState.products).toBe(Phones);
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

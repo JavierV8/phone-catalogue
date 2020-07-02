@@ -27,17 +27,11 @@ To build the React app:
 
     npm build
 
-Start the server API, olso will serve the static files of the react app once the application has been built:
-
-    npm run server
-
-The server will run on port 3001
-
-To run the app on development mode:
+To start the app:
 
     npm run start
 
-It will serve the app on port 3000 by default
+The API will run on port 3001 and the app on port 3000
 
 Copyright and license
 

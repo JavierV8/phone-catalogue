@@ -11,6 +11,7 @@
     "bootstrap": "^4.5.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "fetch-mock": "^9.10.3",

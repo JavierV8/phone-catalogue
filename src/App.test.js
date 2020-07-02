@@ -6,7 +6,6 @@ import thunk from "redux-thunk";
 import App from "./App";
 import Phones from "../phones.json";
 import Product from "./components/Product";
-import { getProducts } from "./store/actions/Products";
 
 const findByTestAtrr = (component, attr) => {
   const wrapper = component.find(`[data-test='${attr}']`);
@@ -20,6 +19,7 @@ const store = (products, isLoading) => {
   const isLoadin = isLoading || false;
   return mockStore({
     products: { products: product, isLoading: isLoadin },
+    dispatch: jest.fn(),
   });
 };
 
@@ -64,7 +64,12 @@ it("Should render all products", () => {
   expect(component.find(Product).length).toBeGreaterThan(0);
 });
 
-it("Should dispatch action 'getProducts' on component Mount", () => {
-  expect(store.dispatch).toHaveBeenCalledTimes(1);
-  expect(store.dispatch).toHaveBeenCalledWith(getProducts());
+it("Should render NO products", () => {
+  const wrapper = mount(
+    <Provider store={store(null, false)}>
+      <App />
+    </Provider>
+  );
+  const component = findByTestAtrr(wrapper, "appComponent");
+  expect(component.find(Product).length).toBe(0);
 });

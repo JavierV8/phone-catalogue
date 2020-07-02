@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import Product from "./Product";
-import Modal from "./Modal";
+import Product from "../components/Product";
+import Modal from "../components/Modal";
 
 const findByTestAtrr = (component, attr) => {
   const wrapper = component.find(`[data-test='${attr}']`);

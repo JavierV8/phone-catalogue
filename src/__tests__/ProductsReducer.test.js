@@ -1,6 +1,6 @@
-import productReducer from "./Products";
-import * as actions from "../actions/actionTypes";
-import Phones from "../../../phones.json";
+import productReducer from "../store/reducers/Products";
+import * as actions from "../store/actions/actionTypes";
+import Phones from "../../phones.json";
 
 const initialState = {
   isLoading: false,

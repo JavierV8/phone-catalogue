@@ -1,10 +1,14 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
-import { getProducts } from "./Products";
-import Phones from "../../../phones.json";
-import { loadingError, loadingInProgress, setProducts } from "./Products";
-import * as actions from "./actionTypes";
+import { getProducts } from "../store/actions/Products";
+import Phones from "../../phones.json";
+import {
+  loadingError,
+  loadingInProgress,
+  setProducts,
+} from "../store/actions/Products";
+import * as actions from "../store/actions/actionTypes";
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);

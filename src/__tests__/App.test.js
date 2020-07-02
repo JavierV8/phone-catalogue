@@ -3,9 +3,9 @@ import { Provider } from "react-redux";
 import { mount } from "enzyme";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import App from "./App";
-import Phones from "../phones.json";
-import Product from "./components/Product";
+import App from "../App";
+import Phones from "../../phones.json";
+import Product from "../components/Product";
 
 const findByTestAtrr = (component, attr) => {
   const wrapper = component.find(`[data-test='${attr}']`);

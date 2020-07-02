@@ -11,7 +11,7 @@ const setUp = (props) => {
   return mount(<Modal {...props} />);
 };
 
-it("Should redner Modal component whitout errors", () => {
+it("Should render Modal component whitout errors", () => {
   const component = findByTestAtrr(setUp(), "modalComponent");
   expect(component.length).toBe(1);
 });

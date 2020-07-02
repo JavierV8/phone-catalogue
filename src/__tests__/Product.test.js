@@ -26,22 +26,22 @@ const props = {
   ram: 2,
 };
 
-it("Should redner product component whitout errors", () => {
+it("Should render product component without errors", () => {
   const component = findByTestAtrr(setUp(), "productComponent");
   expect(component.length).toBe(1);
 });
 
-it("Should recibe p component whit name prop", () => {
+it("Should recibe p component whith name prop", () => {
   const Component = findByTestAtrr(setUp({ ...props }), "product-name");
   expect(Component.text()).toBe(props.name);
 });
 
-it("Should recie p component whit price prop", () => {
+it("Should recie p component whith price prop", () => {
   const Component = findByTestAtrr(setUp({ ...props }), "product-price");
   expect(Component.text()).toBe(`${props.price} €`);
 });
 
-it("Should recive an img whit src of image prop", () => {
+it("Should recive an img whith src of image prop", () => {
   const wrapper = setUp({ ...props });
   const Component = findByTestAtrr(wrapper, "product-image");
   expect(Component.length).toBe(1);

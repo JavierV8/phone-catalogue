@@ -44,7 +44,7 @@ it("Should NOT render spinner component", () => {
   expect(component.length).toBe(0);
 });
 
-it("Should render Spinner", () => {
+it("Should render Spinner component", () => {
   const wrapper = mount(
     <Provider store={store(null, true)}>
       <App />

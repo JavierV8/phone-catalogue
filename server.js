@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const phones = require("./phones.json");
-const { parse } = require("path");
 
 // statics assets if in production
 if (process.env.NODE_ENV === "production") {

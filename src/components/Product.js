@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import PropTypes from "prop-types";
 import "./Product.css";
 
 const Product = (props) => {
@@ -69,6 +70,19 @@ const Product = (props) => {
       />
     </div>
   );
+};
+
+Product.prototype = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  manufacturer: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  imageFileName: PropTypes.string.isRequired,
+  screen: PropTypes.string.isRequired,
+  processor: PropTypes.string.isRequired,
+  ram: PropTypes.string.isRequired,
 };
 
 export default Product;

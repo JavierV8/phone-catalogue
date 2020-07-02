@@ -15,9 +15,9 @@ function App() {
     dispatch(getProducts());
   }, []);
 
-  const pro = [];
+  const phones = [];
   for (let product in products)
-    pro.push(
+    phones.push(
       <Product
         key={products[product].id}
         id={products[product].id}
@@ -53,7 +53,7 @@ function App() {
             <Spinner color="primary" />
           </div>
         ) : (
-          pro
+          phones
         )}
       </div>
     </div>
